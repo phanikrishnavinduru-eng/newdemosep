@@ -1,0 +1,29 @@
+from sentence-transformers import SentenceTransformer
+model=SentenceTransformer('all-MiniLM-L6-V2')
+
+sentences=['Modi is a PM of India','Virat is crickter','Messi is retired from football']
+question=['Who is PM of India']
+len(model.encode('King'))
+
+sen_vector=model.encode(sentences)
+
+len(sen_vector)
+qv=model.encode(question)
+
+v1=sen_vector[0]
+v2=sen_vector[1]
+v3=sen_vector[2]
+#apply cosine similarity
+Nr=np.dot(qv,v1)
+Dr=norm(qv)*norm(v1)
+Nr/Dr
+
+Nr=np.dot(qv,v2)
+Dr=norm(qv)*norm(v2)
+Nr/Dr
+
+Nr=np.dot(qv,v3)
+Dr=norm(qv)*norm(v3)
+Nr/Dr
+
+https://colab.research.google.com/drive/1NnzXeHzR_TnriM4YocptRLmJAaZlc6oc#scrollTo=KbSlRAdf1fQf
